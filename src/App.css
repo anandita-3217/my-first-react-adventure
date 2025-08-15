@@ -1,0 +1,146 @@
+/* Main container */
+.app-container {
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Main title */
+.app-title {
+  color: #d32f2f;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+/* Subtitle */
+.app-subtitle {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Input section */
+.input-section {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Text input */
+.question-input {
+  padding: 12px;
+  width: 300px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.question-input:focus {
+  border-color: #d32f2f;
+}
+
+.question-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Submit button */
+.submit-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  min-width: 120px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #b71c1c;
+  transform: translateY(-1px);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Answer box */
+.answer-box {
+  padding: 20px;
+  background-color: #ffebee;
+  border: 2px solid #d32f2f;
+  border-radius: 10px;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.answer-title {
+  color: #d32f2f;
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+}
+
+.answer-text {
+  font-size: 18px;
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #999;
+}
+
+.app-footer p {
+  margin: 0;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px;
+  }
+  
+  .input-section {
+    flex-direction: column;
+  }
+  
+  .question-input {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .app-title {
+    font-size: 1.5rem;
+  }
+}
