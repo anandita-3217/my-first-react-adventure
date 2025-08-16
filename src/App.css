@@ -1,161 +1,209 @@
-/* Main container */
+/* Updated App.css - Clean White & Blue Theme */
 .app-container {
-  padding: 40px;
-  max-width: 600px;
+  padding: 20px;
+  max-width: 900px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.main-title {
   text-align: center;
-}
-
-/* Main title */
-.app-title {
-  color: #d32f2f;
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-
-/* Subtitle */
-.app-subtitle {
-  color: #666;
+  color: #1e293b;
   margin-bottom: 30px;
-  font-size: 1.1rem;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
 }
 
-/* Input section */
-.input-section {
-  margin-bottom: 20px;
+.component-switcher {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 
-/* Text input */
-.question-input {
-  padding: 12px;
-  width: 300px;
+.switch-button {
+  padding: 14px 28px;
   font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.question-input:focus {
-  border-color: #d32f2f;
-}
-
-.question-input::placeholder {
-  color: #999;
-  font-style: italic;
-}
-
-/* Submit button */
-.submit-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  background-color: #d32f2f;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-  min-width: 120px;
-}
-
-.submit-button:hover:not(:disabled) {
-  background-color: #b71c1c;
-  transform: translateY(-1px);
-}
-
-.submit-button:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-.submit-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Answer box */
-.answer-box {
-  padding: 20px;
-  background-color: #ffebee;
-  border: 2px solid #d32f2f;
-  border-radius: 10px;
-  margin-top: 20px;
-  animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.answer-title {
-  color: #d32f2f;
-  margin: 0 0 10px 0;
-  font-size: 1.3rem;
-}
-
-.answer-text {
-  font-size: 18px;
-  margin: 0;
-  font-weight: bold;
-  color: #333;
-}
-
-.switch-button{
-  padding: 12px 24px;
-  font-size: 16px;
-  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  background: white;
+  color: #3b82f6;
   cursor: pointer;
   transition: all 0.3s ease;
-  min-width: 150px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-right: 5px;
-}
-/* Footer */
-.main-app-footer {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #999;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
 }
 
-.main-app-footer p {
-  margin: 0;
-  font-style: italic;
+.switch-button:hover {
+  background: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.switch-button.active {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+}
+
+.component-display {
+  margin-bottom: 40px;
+}
+
+.placeholder-component {
+  padding: 40px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.placeholder-component h2 {
+  color: #059669;
+  margin-bottom: 15px;
+}
+
+.placeholder-component p {
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.app-footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.app-footer p {
+  margin: 5px 0;
+  font-weight: 500;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .app-container {
-    padding: 20px;
+    padding: 15px;
   }
   
-  .input-section {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .component-switcher {
     flex-direction: column;
+    align-items: center;
   }
   
-  .question-input {
-    width: 100%;
-    max-width: 300px;
+  .switch-button {
+    width: 200px;
+  }
+}/* Updated App.css - Clean White & Blue Theme */
+.app-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.main-title {
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.component-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.switch-button {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  background: white;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.switch-button:hover {
+  background: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.switch-button.active {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+}
+
+.component-display {
+  margin-bottom: 40px;
+}
+
+.placeholder-component {
+  padding: 40px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.placeholder-component h2 {
+  color: #059669;
+  margin-bottom: 15px;
+}
+
+.placeholder-component p {
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.app-footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.app-footer p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
   }
   
-  .app-title {
-    font-size: 1.5rem;
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .component-switcher {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .switch-button {
+    width: 200px;
   }
 }

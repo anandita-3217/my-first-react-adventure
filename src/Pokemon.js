@@ -1,5 +1,6 @@
 // Pokemon app
 import { useState } from 'react';
+import './Pokemon.css';
 
 function Pokemon() {
   const [pokemonName, setPokemonName] = useState('');
@@ -53,40 +54,24 @@ function Pokemon() {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto', fontFamily: 'Arial' }}>
-      <h1>🔴 Pokémon Fetcher! 🔴</h1>
-      <p>Enter a Pokémon name and see their image and stats!</p>
+    <div className='pokemon-container'>
+      <h1 className='pokemon-title'>🔴 Pokémon Fetcher! 🔴</h1>
+      <p className='pokemon-subtitle'>Enter a Pokémon name and see their image and stats!</p>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div className='pokemon-input-section'>
         <input
           type="text"
           value={pokemonName}
           onChange={(e) => setPokemonName(e.target.value)}
           placeholder="Enter Pokémon name (e.g., pikachu)"
-          style={{
-            padding: '10px',
-            width: '250px',
-            fontSize: '16px',
-            marginRight: '10px',
-            border: '2px solid #ddd',
-            borderRadius: '5px'
-          }}
+          className='pokemon-input'
           onKeyPress={handleKeyPress}
         />
         
         <button
           onClick={fetchPokemon}
           disabled={loading}
-          style={{
-            padding: '10px 20px',
-            fontSize: '16px',
-            backgroundColor: '#ff6b6b',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: loading ? 'not-allowed' : 'pointer',
-            marginRight: '10px'
-          }}
+          className='pokemon-button'
         >
           {loading ? 'Catching...' : 'Catch Pokémon!'}
         </button>
@@ -94,105 +79,78 @@ function Pokemon() {
         <button
           onClick={getRandomPokemon}
           disabled={loading}
-          style={{
-            padding: '10px 20px',
-            fontSize: '16px',
-            backgroundColor: '#4ecdc4',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: loading ? 'not-allowed' : 'pointer'
-          }}
+          className='pokemon-button random'
         >
           Random
         </button>
       </div>
 
       {error && (
-        <div style={{
-          padding: '15px',
-          backgroundColor: '#ffebee',
-          border: '2px solid #f44336',
-          borderRadius: '5px',
-          color: '#f44336',
-          marginBottom: '20px'
-        }}>
+        <div className='pokemon-error'>
           {error}
         </div>
       )}
 
       {pokemonData && (
-        <div style={{
-          border: '2px solid #ddd',
-          borderRadius: '10px',
-          padding: '20px',
-          backgroundColor: '#f9f9f9'
-        }}>
-          <h2 style={{ textTransform: 'capitalize', color: '#333' }}>
+        <div className='pokemon-data'>
+          <h2 className='pokemon-name'>
             {pokemonData.name} (#{pokemonData.id})
           </h2>
           
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+          <div className='pokemon-images'>
             {/* Front sprite */}
-            <div style={{ textAlign: 'center' }}>
+            <div className='pokemon-image-container'>
               <h4>Front</h4>
               <img 
                 src={pokemonData.sprites.front_default} 
                 alt={`${pokemonData.name} front`}
-                style={{ width: '150px', height: '150px', border: '2px solid #ddd', borderRadius: '10px' }}
+                className='pokemon-image'
               />
             </div>
 
             {/* Back sprite */}
-            <div style={{ textAlign: 'center' }}>
+            <div className='pokemon-image-container'>
               <h4>Back</h4>
               <img 
                 src={pokemonData.sprites.back_default} 
                 alt={`${pokemonData.name} back`}
-                style={{ width: '150px', height: '150px', border: '2px solid #ddd', borderRadius: '10px' }}
+                className='pokemon-image'
               />
             </div>
 
             {/* Shiny front (if available) */}
             {pokemonData.sprites.front_shiny && (
-              <div style={{ textAlign: 'center' }}>
+              <div className='pokemon-image-container shiny'>
                 <h4>Shiny ✨</h4>
                 <img 
                   src={pokemonData.sprites.front_shiny} 
                   alt={`${pokemonData.name} shiny`}
-                  style={{ width: '150px', height: '150px', border: '2px solid #ffd700', borderRadius: '10px' }}
+                  className='pokemon-image '
                 />
               </div>
             )}
           </div>
 
           {/* Stats */}
-          <div style={{ marginTop: '20px' }}>
+          <div className='pokemon-stats'>
             <h3>Base Stats:</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
+            <div className='stats-grid'>
               {pokemonData.stats.map((stat, index) => (
-                <div key={index} style={{ padding: '10px', backgroundColor: 'white', borderRadius: '5px' }}>
-                  <strong style={{ textTransform: 'capitalize' }}>{stat.stat.name}:</strong> {stat.base_stat}
+                <div key={index} className='stat-item'>
+                  <strong>{stat.stat.name}:</strong> {stat.base_stat}
                 </div>
               ))}
             </div>
           </div>
 
           {/* Types */}
-          <div style={{ marginTop: '15px' }}>
+          <div className='pokemon-types'>
             <h3>Type(s):</h3>
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <div className='types-contianer'>
               {pokemonData.types.map((type, index) => (
                 <span 
                   key={index} 
-                  style={{
-                    padding: '5px 15px',
-                    backgroundColor: '#007bff',
-                    color: 'white',
-                    borderRadius: '20px',
-                    textTransform: 'capitalize',
-                    fontSize: '14px'
-                  }}
+                  className='type-badge'
                 >
                   {type.type.name}
                 </span>
@@ -201,7 +159,7 @@ function Pokemon() {
           </div>
 
           {/* Height and Weight */}
-          <div style={{ marginTop: '15px', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+          <div className='pokemon-physical'>
             <div>
               <strong>Height:</strong> {pokemonData.height / 10} meters
             </div>

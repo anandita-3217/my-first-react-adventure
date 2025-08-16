@@ -43,36 +43,36 @@ const handleKeyPress = (e) => {
 };
 
   return (
-    <div className="app-container">
-      <h1 className="app-title">
+    <div className="no-machine-container">
+      <h1 className="no-machine-title">
         🚫 The Ultimate "NO" Machine 🚫
       </h1>
       
-      <p className="app-subtitle">
+      <p className="no-machine-subtitle">
         Ask me anything and I'll tell you why you shouldn't do it!
       </p>
 
-      <div className="input-section">
+      <div className="no-machine-input-section">
         <input
           type="text"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="Should I eat that entire pizza?"
-          className="question-input"
+          className="no-machine-input"
           onKeyPress={handleKeyPress}
         />
         
         <button
           onClick={askTheNoOracle}
           disabled={loading}
-          className="submit-button"
+          className="no-machine-button"
         >
           {loading ? 'Thinking...' : 'Ask the Oracle'}
         </button>
       </div>
 
       {answer && (
-        <div className="answer-box">
+        <div className="no-machine-answer">
           <h3 className="answer-title">Oracle Says:</h3>
           <p className="answer-text">{answer}</p>
         </div>
