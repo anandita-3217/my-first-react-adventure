@@ -1,8 +1,9 @@
 import './App.css';
-import Pokemon  from './Pokemon.js';
-import NoMachine from './NoMachine.js';
-import DogPics from './DogPics.js';
-import YesNo from './YesNo.js';
+import Pokemon  from './Pokemon/Pokemon.js';
+import NoMachine from './NoMachine/NoMachine.js';
+import DogPics from './DogPics/DogPics.js';
+import YesNo from './YesNo/YesNo.js';
+import GitHubFind from './GitHubFind/GitHubFind.js';
 import { useState } from 'react';
 
 function App(){
@@ -23,12 +24,16 @@ function App(){
                 <button onClick={() => setActiveComponent('yes-no')} className={`switch-button ${activeComponent === 'yes-no' ? 'active' : ''}`}>
                     Yes/No
                 </button>
+                <button onClick={() => setActiveComponent('git-hub-find')} className={`switch-button ${activeComponent === 'git-hub-dind' ? 'active' : ''}`}>
+                    GitHub Finder
+                </button>
             </div>
             <div className='component-display'>
                 {activeComponent === 'no' && <NoMachine/>}
                 {activeComponent === 'pokemon' && <Pokemon/>}
                 {activeComponent === 'dog-pics' && <DogPics/>}
                 {activeComponent === 'yes-no' && <YesNo/>}
+                {activeComponent === 'git-hub-find' && <GitHubFind/>}
 
             </div>
             <div className='app-footer'>

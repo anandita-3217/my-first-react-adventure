@@ -148,13 +148,4 @@
     flex-direction: column;
     align-items: center;
   }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .pokemon-physical {
-    flex-direction: column;
-    gap: 16px;
-  }
 }
