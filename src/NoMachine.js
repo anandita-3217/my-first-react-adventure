@@ -34,7 +34,19 @@ function NoMachine() {
     
     
     setLoading(false);
-};
+  };
+  // const fetchNo = async () =>{
+  //   setLoading(true);
+  //   try{
+  //     const noresponse = await fetch("http:localhost:5000/no");
+  //     const data = await noresponse.json();
+  //     setAnswer(`${data.reason}`);
+  //   }
+  //   catch(error){
+  //     console.error('Failed due to:',error);
+  //     setAnswer(error);
+  //   }
+  // };
 
 const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -69,6 +81,13 @@ const handleKeyPress = (e) => {
         >
           {loading ? 'Thinking...' : 'Ask the Oracle'}
         </button>
+        {/* <button
+          onClick={fetchNo}
+          disabled={loading}
+          className="no-machine-button"
+        >
+Get a reason
+        </button> */}
       </div>
 
       {answer && (

@@ -1,0 +1,160 @@
+.dog-pics-container{
+    padding: 32px;
+    border: 3px solid #0cea65;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 8px 32px rgba(234, 88, 12, 0.12);
+    max-width: 650px;
+    margin: 0 auto;
+}
+.dog-pics-title {
+  color: #0cea65;
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.dog-pics-subtitle {
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 28px;
+  font-style: normal;
+  font-size: 1.1rem;
+}
+.dog-pics-input-section{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+
+}
+
+.dog-pics-button {
+  padding: 14px 28px;
+  padding: 14px 24px;
+  font-size: 16px;
+  background: #0cea65;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.2);
+  margin-right: 8px;
+}
+
+.dog-pics-button:hover {
+  background: #0cea65;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 234, 12, 0.3);
+}
+
+.dog-pics-button:active{
+  transform: translateY(0);
+}
+
+.dog-pics-button.loading {
+  background: #d1d5db;
+  cursor: not-allowed;
+  color: #6b7280;
+  animation: pulse 1.5s infinite;
+}
+
+.dog-image-container {
+  text-align: center;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.dog-image-status{
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    }
+
+
+.dog-image-container h4 {
+  color: #374151;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.dog-image {
+  width: 450px;
+  height: 450px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.dog-image:hover{
+    transform: scale(1.1);
+}
+
+.dog-pics-footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.dog-pics-footer p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .dog-pics-container {
+    padding: 24px;
+    margin: 10px;
+  }
+  
+  .dog-pics-input-section {
+    flex-direction: column;
+  }
+  
+  .dog-pics-input {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .dog-pics-title {
+    font-size: 1.8rem;
+  }
+  
+  .dog-image {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pokemon-physical {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
