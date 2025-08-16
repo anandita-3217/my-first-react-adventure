@@ -218,90 +218,120 @@
 // export default App;
 
 // No app
-import { useState } from 'react';
-import './App.css';
-function App() {
-  const [question, setQuestion] = useState('');
-  const [answer, setAnswer] = useState('');
-  const [loading, setLoading] = useState(false);
-  const askTheNoOracle = async () => {
-    if (!question.trim()) {
-      setAnswer('Ask me something first! (But the answer will still be no)');
-      return;
-    }
+// import { useState } from 'react';
+// import './App.css';
+// function App() {
+//   const [question, setQuestion] = useState('');
+//   const [answer, setAnswer] = useState('');
+//   const [loading, setLoading] = useState(false);
+//   const askTheNoOracle = async () => {
+//     if (!question.trim()) {
+//       setAnswer('Ask me something first! (But the answer will still be no)');
+//       return;
+//     }
 
-    setLoading(true);      
-      try {
-        const response = await fetch("http://localhost:5000/no");
-        const data = await response.json();
-        setAnswer(`${data.reason}`);
-      } catch (backupError) {
-        console.error('Backup failed too:', backupError);
+//     setLoading(true);      
+//       try {
+//         const response = await fetch("http://localhost:5000/no");
+//         const data = await response.json();
+//         setAnswer(`${data.reason}`);
+//       } catch (backupError) {
+//         console.error('Backup failed too:', backupError);
         
-        // Final fallback: Our own creative "no"
-        const creativeFails = [
-          'NO - The API is having trust issues',
-          'NO - Even the internet is saying no to this request',
-          'NO - CORS blocked us harder than a nightclub bouncer',
-          'NO - The API went out for cigarettes and never came back',
-          'NO - Error 404: Motivation not found'
-        ];
+//         // Final fallback: Our own creative "no"
+//         const creativeFails = [
+//           'NO - The API is having trust issues',
+//           'NO - Even the internet is saying no to this request',
+//           'NO - CORS blocked us harder than a nightclub bouncer',
+//           'NO - The API went out for cigarettes and never came back',
+//           'NO - Error 404: Motivation not found'
+//         ];
         
-        const randomFail = creativeFails[Math.floor(Math.random() * creativeFails.length)];
-        setAnswer(randomFail);
-      }
+//         const randomFail = creativeFails[Math.floor(Math.random() * creativeFails.length)];
+//         setAnswer(randomFail);
+//       }
     
     
-    setLoading(false);
-  };
+//     setLoading(false);
+//   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      askTheNoOracle();
-    }
-  };
+//   const handleKeyPress = (e) => {
+//     if (e.key === 'Enter') {
+//       askTheNoOracle();
+//     }
+//   };
 
-  return (
-    <div className="app-container">
-      <h1 className="app-title">
-        🚫 The Ultimate "NO" Machine 🚫
-      </h1>
+//   return (
+//     <div className="app-container">
+//       <h1 className="app-title">
+//         🚫 The Ultimate "NO" Machine 🚫
+//       </h1>
       
-      <p className="app-subtitle">
-        Ask me anything and I'll tell you why you shouldn't do it!
-      </p>
+//       <p className="app-subtitle">
+//         Ask me anything and I'll tell you why you shouldn't do it!
+//       </p>
 
-      <div className="input-section">
-        <input
-          type="text"
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Should I eat that entire pizza?"
-          className="question-input"
-          onKeyPress={handleKeyPress}
-        />
+//       <div className="input-section">
+//         <input
+//           type="text"
+//           value={question}
+//           onChange={(e) => setQuestion(e.target.value)}
+//           placeholder="Should I eat that entire pizza?"
+//           className="question-input"
+//           onKeyPress={handleKeyPress}
+//         />
         
-        <button
-          onClick={askTheNoOracle}
-          disabled={loading}
-          className="submit-button"
-        >
-          {loading ? 'Thinking...' : 'Ask the Oracle'}
-        </button>
-      </div>
+//         <button
+//           onClick={askTheNoOracle}
+//           disabled={loading}
+//           className="submit-button"
+//         >
+//           {loading ? 'Thinking...' : 'Ask the Oracle'}
+//         </button>
+//       </div>
 
-      {answer && (
-        <div className="answer-box">
-          <h3 className="answer-title">Oracle Says:</h3>
-          <p className="answer-text">{answer}</p>
+//       {answer && (
+//         <div className="answer-box">
+//           <h3 className="answer-title">Oracle Says:</h3>
+//           <p className="answer-text">{answer}</p>
+//         </div>
+//       )}
+
+//       <div className="app-footer">
+//         <p>Powered by stubbornness and poor life choices</p>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+import './App.css';
+import Pokemon  from './Pokemon.js';
+import NoMachine from './NoMachine.js';
+import { useState } from 'react';
+
+function App(){
+    const [activeComponent,setActiveComponent] = useState('no');
+    return (
+        <div className='app-container'>
+            <h1 className='main-title'> My React Learning Sandbox</h1>
+            <div className='component-switcher'>
+                <button onClick={() => setActiveComponent('no')} className={`switch-button ${activeComponent === 'no' ? 'active' : ''}`}>
+                    No Machine
+                </button>
+                <button onClick={() => setActiveComponent('pokemon')} className={`switch-button ${activeComponent === 'pokemon' ? 'active' : ''}`}>
+                    Pokemon Fetcher
+                </button>
+            </div>
+            <div className='component-display'>
+                {activeComponent === 'no' && <NoMachine/>}
+                {activeComponent === 'pokemon' && <Pokemon/>}
+
+            </div>
+            <div className='main-app-footer'>
+                <p>React playgounrd pls work</p>
+            </div>
         </div>
-      )}
-
-      <div className="app-footer">
-        <p>Powered by stubbornness and poor life choices</p>
-      </div>
-    </div>
-  );
+    );
 }
-
 export default App;
