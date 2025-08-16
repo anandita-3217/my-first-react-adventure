@@ -16,6 +16,16 @@ A fun React application built while learning the fundamentals of component-based
 - Handles API errors gracefully
 - No CORS issues (because PokéAPI is awesome)
 
+### 🐶 Dog Pics
+- Fetches Dog Pics
+- Displays Dog images
+- Handles API errors gracefully
+- No CORS issues 
+
+###  Yes/No
+- Makes Desicions so you dont have to
+- Cool gifs to really drive the idea home
+
 ### ✨ Component Architecture
 - Clean separation of concerns
 - Modular, reusable components
@@ -27,7 +37,7 @@ A fun React application built while learning the fundamentals of component-based
 - **Frontend**: React 18 with Hooks
 - **Backend**: Node.js (for No as a Service proxy)
 - **APIs**: 
-  - Custom "No as a Service" API
+  -  [No as a Service API] (https://naas.isalman.dev/no) for No-as-a-Service
   - [PokéAPI](https://pokeapi.co/) for Pokémon data
 - **Styling**: Pure CSS with modern features
 - **Module System**: ES Modules (`"type": "module"`)
@@ -42,6 +52,10 @@ src/
 ├── NoMachine.css       # No Machine styles
 ├── Pokemon.js          # Pokémon fetcher component
 ├── Pokemon.css         # Pokémon component styles
+├── DogPics.js          # Dog Pics fetcher component
+├── DogPics.css         # Dog Pics  component styles
+├── YesNo.js            # YesNo component
+├── YesNo.css           # YesNo  component styles
 └── index.js            # React entry point
 
 root/
@@ -59,8 +73,8 @@ root/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/react-learning-sandbox.git
-   cd react-learning-sandbox
+   git clone https://github.com/anandita-3217/my-first-react-adventure.git
+   cd my-first-react-adventure
    ```
 
 2. **Install dependencies**
@@ -147,11 +161,13 @@ This project was built as a learning exercise to understand React fundamentals. 
 
 - **No as a Service API** - For providing professional rejection services
 - **PokéAPI** - For comprehensive Pokémon data and excellent API design
+- **DogPics** - For adorable furry friends
+- **YesNo** - For making descions so i dont have to
 - **React Team** - For making UI development actually enjoyable
 
 
 ---
 
-**Built with ❤️ and a lot of console.log statements**
+**Built with ❤️ and a lot of confusion**
 
 *"Learning React one component at a time!"* 🚀
