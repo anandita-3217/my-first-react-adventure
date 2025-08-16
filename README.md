@@ -34,7 +34,7 @@ A fun React application built while learning the fundamentals of component-based
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18 with Hooks
+- **Frontend**: React 19 with Hooks
 - **Backend**: Node.js (for No as a Service proxy)
 - **APIs**: 
   -  [No as a Service API] (https://naas.isalman.dev/no) for No-as-a-Service
