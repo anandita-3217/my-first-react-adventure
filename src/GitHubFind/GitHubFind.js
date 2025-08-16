@@ -107,7 +107,7 @@ function GitHubFind(){
                         <div className='stat-item'><strong>Public Repos:    </strong>{gitHubData.public_repos}</div>
                         <div className='stat-item'><strong>Followers:   </strong>{gitHubData.followers}</div>
                         <div className='stat-item'><strong>Following:   </strong>{gitHubData.following}</div>
-                        <div className='stat-item'><strong>Languages:   </strong>
+                        <div className='stat-item'><strong>Languages:</strong>
                         {gitHubData.languages ? Object.entries(gitHubData.languages).map(([lang, count]) => `${lang} (${count})`) .join(', ') : 'Loading...'}</div>
                         <div className='stat-item'><strong>Contribution Streak: </strong>{gitHubData.contributionStreak ? `${gitHubData.contributionStreak.currentStreak} days` : 'Loading...'}</div>
                     </div>
