@@ -4,6 +4,7 @@ import NoMachine from './NoMachine/NoMachine.js';
 import DogPics from './DogPics/DogPics.js';
 import YesNo from './YesNo/YesNo.js';
 import GitHubFind from './GitHubFind/GitHubFind.js';
+import Photobooth from './PhotoBooth/PhotoBooth.js';
 import { useState } from 'react';
 
 function App(){
@@ -24,8 +25,11 @@ function App(){
                 <button onClick={() => setActiveComponent('yes-no')} className={`switch-button ${activeComponent === 'yes-no' ? 'active' : ''}`}>
                     Yes/No
                 </button>
-                <button onClick={() => setActiveComponent('git-hub-find')} className={`switch-button ${activeComponent === 'git-hub-dind' ? 'active' : ''}`}>
+                <button onClick={() => setActiveComponent('git-hub-find')} className={`switch-button ${activeComponent === 'git-hub-find' ? 'active' : ''}`}>
                     GitHub Finder
+                </button>
+                <button onClick={() => setActiveComponent('photo-booth')} className={`switch-button ${activeComponent === 'photo-booth' ? 'active' : ''}`}>
+                    Photo Booth
                 </button>
             </div>
             <div className='component-display'>
@@ -34,6 +38,7 @@ function App(){
                 {activeComponent === 'dog-pics' && <DogPics/>}
                 {activeComponent === 'yes-no' && <YesNo/>}
                 {activeComponent === 'git-hub-find' && <GitHubFind/>}
+                {activeComponent === 'photo-booth' && <Photobooth/>}
 
             </div>
             <div className='app-footer'>

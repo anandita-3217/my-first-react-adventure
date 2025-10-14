@@ -26,6 +26,11 @@ A fun React application built while learning the fundamentals of component-based
 - Makes Desicions so you dont have to
 - Cool gifs to really drive the idea home
 
+### PhotoBooth 📸
+- No API calls just a simple photobooth
+- Inspired by nashallery on Instagram
+
+
 ### ✨ Component Architecture
 - Clean separation of concerns
 - Modular, reusable components
