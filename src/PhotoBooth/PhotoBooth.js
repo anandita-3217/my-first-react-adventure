@@ -1,25 +1,19 @@
 // Photobooth
 import React,{ useState,useEffect } from "react";
-import WebCam from 'react-webcam';
-import './PhotoBooth.css';
 
-const videoConstraints={
-    width: 1280,
-    height: 720,
-    facingMode: "user"
-};
+import './PhotoBooth.css';
+import Camera from "./utils/Camera";
 
 function Photobooth(){
     const [status, setStatus] = useState('');
-    const [cap,setCap] = useState('');
-    const weCamRef = React.useRef(null);
-    const capture = React.useCallback(()=>{
-        const imageSrc = weCamRef.current.getScreenshot();
-        setCap(imageSrc);
-    }, [weCamRef])
-    useEffect(()=>{
-        setStatus("🔧 under construction 🔧");
+    const [photos,setPhotos] = useState([]);
+    const handleCapture = (imageSrc) => {
+        setPhotos([...photos,imageSrc]);
+    };
+    useEffect(() => {
+        setStatus("🔧 Under Construction🔧")
     },[]);
+    
     return(
         <div className="photo-booth-container">
             <h1 className="photo-booth-title">
@@ -29,14 +23,18 @@ function Photobooth(){
                 Take cute pics!
             </p>
             <p className="app-footer">{status}</p>
-            <WebCam
-            audio = {false} height ={300}
-            ref={weCamRef} screenshotFormat="image/jpeg"
-            width = {300} videoConstraints={videoConstraints}
-            />
-            <button className="photo-booth-button" onClick={capture}>Capture Photo</button>
+            <Camera onCapture =  {handleCapture}/>
+            {/* <button className="photo-booth-button" onClick={capture}>Capture Photo</button> */}
             <br/>
-            {cap && <img src={cap} alt="captured" />}
+            <div className="photo-gallery">
+    {photos.length === 0 ? (
+        <p>No photos yet! Start snapping! 📸</p>
+    ) : (
+        photos.map((photo, index) => (
+            <img key={index} src={photo} alt={`capture ${index}`} />
+        ))
+    )}
+</div>
         </div>
     )
 }

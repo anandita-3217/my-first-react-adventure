@@ -26,24 +26,19 @@
   font-size: 1.1rem;
 }
 
-.photo-booth-input-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
+  margin-top: 24px;
 }
 
-.photo-booth-input {
-  padding: 14px 18px;
-  width: 320px;
-  font-size: 16px;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  outline: none;
-  transition: all 0.3s ease;
-  background: #f9fafb;
+.photo-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #7c3aed; /* or whatever color you picked */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .photo-booth-input:focus {
@@ -52,10 +47,7 @@
   background: white;
 }
 
-.photo-booth-input::placeholder {
-  color: #9ca3af;
-  font-style: italic;
-}
+
 
 .photo-booth-button {
   padding: 14px 28px;
