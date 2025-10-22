@@ -127,6 +127,188 @@
   line-height: 1.5;
 }
 
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+    padding: 16px;
+    width: 100%;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    background: white;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.delete-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(220, 38, 38, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+.photo-item:hover .delete-button {
+    opacity: 1;
+}
+
+.delete-button:hover {
+    background: rgba(185, 28, 28, 1);
+    transform: scale(1.1);
+}
+
+.no-photos-message {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-top: 32px;
+    font-style: italic;
+}
+
+/* Emoji Selector Styles */
+.emoji-selector {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.emoji-label {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.emoji-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.emoji-button {
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emoji-button:hover {
+    transform: scale(1.1);
+    border-color: #7c3aed;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.emoji-button.selected {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    transform: scale(1.15);
+}
+
+.clear-emoji {
+    font-size: 20px;
+}
+
+/* Camera Styles */
+.camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.camera-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.camera-wrapper video {
+    display: block;
+    width: 300px;
+    height: 450px;
+}
+
+.emoji-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 80px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    animation: float 2s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.capture-button {
+    padding: 14px 32px;
+    font-size: 18px;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+}
+
+.capture-button:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.capture-button:active {
+    transform: translateY(0);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .photo-booth-container {

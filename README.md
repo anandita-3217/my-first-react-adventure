@@ -8,7 +8,9 @@ A fun React application built while learning the fundamentals of component-based
 - Connects to a local Node.js server running "No as a Service"
 - Provides creative rejection responses to any question
 - Demonstrates API integration and error handling
-- **Solved CORS issues like a pro!**
+- **Solved CORS issues like a pro! by using a proxy express server**
+- ABSOLUTELY CRITICAL WHILE USING THIS FEATURE: RUN:  
+- - ``` node server.js ``` in a new terminal and keep it running the entire time this feature is in use
 
 ### 🔴 Pokémon Fetcher
 - Fetches Pokémon data from the PokéAPI
