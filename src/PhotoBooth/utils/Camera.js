@@ -43,7 +43,6 @@
 // }
 
 // export default Camera;
-
 import React, { useRef, useCallback } from "react";
 import Webcam from "react-webcam";
 
@@ -53,7 +52,7 @@ const videoConstraints = {
     facingMode: "user"
 };
 
-function Camera({ onCapture, selectedEmoji }) {
+function Camera({ onCapture, selectedEmoji, selectedFilter }) {
     const webCamRef = useRef(null);
     const canvasRef = useRef(null);
     
@@ -62,20 +61,17 @@ function Camera({ onCapture, selectedEmoji }) {
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
         
-        // Set canvas size to match video
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         
-        // Draw video frame
+        // Apply filter if selected (we'll do this with CSS on video instead)
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
         
-        // Draw emoji if selected
         if (selectedEmoji) {
             context.font = '100px Arial';
             context.fillText(selectedEmoji, canvas.width - 150, 120);
         }
         
-        // Get image data
         const imageSrc = canvas.toDataURL('image/jpeg');
         onCapture(imageSrc);
     }, [selectedEmoji, onCapture]);
@@ -91,6 +87,7 @@ function Camera({ onCapture, selectedEmoji }) {
                     screenshotFormat="image/jpeg" 
                     videoConstraints={videoConstraints}
                     mirrored={false}
+                    style={{ filter: selectedFilter }}
                 />
                 {selectedEmoji && (
                     <div className="emoji-overlay">
@@ -105,4 +102,3 @@ function Camera({ onCapture, selectedEmoji }) {
 }
 
 export default Camera;
-
